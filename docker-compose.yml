@@ -1,0 +1,13 @@
+# version: '3'
+name: tta-standard-advisory-system-frontend-cloud-compose
+services:
+    fe_client:
+        container_name: tta_standard-advisory-system_cloud_fe
+        restart: always
+        build:
+            dockerfile: ./Dockerfile
+        ports:
+            - '47102:47102'
+            # - "80:80"
+        extra_hosts:
+            - host.docker.internal:host-gateway
